@@ -67,6 +67,22 @@ footer{background:#17120e;color:#bcae9f;padding:24px 0;font: .8rem Arial,sans-se
  .navlinks a:nth-child(-n+2){display:none}.hero{min-height:70vh}.hero-content{padding:80px 0}
  .cards,.gallery,.steps{grid-template-columns:1fr}section{padding:70px 0}.gallery img{height:260px}
 }
+
+/* Portfolio filter + lightbox */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.filter-btn{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:10px 16px;cursor:pointer;font:600 .78rem Arial,sans-serif;letter-spacing:.4px}
+.filter-btn.active,.filter-btn:hover{background:var(--dark);color:#fff;border-color:var(--dark)}
+.gallery figure.hidden{display:none}
+.gallery figcaption span{margin-bottom:10px}
+.gallery .wa-btn{display:inline-block;font:700 .72rem Arial,sans-serif;padding:7px 10px;background:var(--wood);color:#fff}
+.gallery .wa-btn:hover{background:var(--wood2)}
+.lightbox{position:fixed;inset:0;background:rgba(15,11,8,.92);display:none;align-items:center;justify-content:center;padding:25px;z-index:100}
+.lightbox.open{display:flex}
+.lightbox img{max-width:94vw;max-height:84vh;object-fit:contain;box-shadow:0 12px 50px rgba(0,0,0,.45)}
+.lightbox .close{position:absolute;top:18px;right:22px;color:#fff;background:none;border:0;font-size:2.2rem;cursor:pointer}
+.lightbox .caption{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#fff;font:600 .9rem Arial,sans-serif}
+.portfolio-note{font:.82rem Arial,sans-serif;color:var(--muted);margin-top:18px}
+
 </style>
 </head>
 <body>
@@ -118,18 +134,35 @@ footer{background:#17120e;color:#bcae9f;padding:24px 0;font: .8rem Arial,sans-se
 <section id="proyek">
  <div class="container">
   <div class="section-head"><div class="eyebrow">Portofolio</div><h2>Beberapa hasil pekerjaan kami.</h2><p class="lead">Dokumentasi langsung dari proses dan hasil karya Kardi Putra Furniture.</p></div>
-  <div class="gallery">
-   <figure><img src="images/project-2.jpg" alt="Lemari baju gantung & rak dengan 2 pintu full kaca"><figcaption>Lemari Baju 2 Pintu<span>Finishing cat duco putih • Custom</span></figcaption></figure>
-   <figure><img src="images/project-3.jpg" alt="Meja kerja putih dengan laci"><figcaption>Meja Kerja<span>Finishing cat duco putih • Custom</span></figcaption></figure>
-   <figure><img src="images/project-4.jpg" alt="Lemari pakaian klasik putih"><figcaption>Lemari Pakaian 3 Pintu<span>Finishing cat duco putih • Custom</span></figcaption></figure>
-   <figure><img src="images/project-5.jpg" alt="Pintu kayu klasik"><figcaption>Kusen & Pintu Minimalis<span>Material kayu • Natural</span></figcaption></figure>
-   <figure><img src="images/project-6.jpg" alt="Pintu kayu finishing cokelat"><figcaption>Bingkai Lukisan Lumut<span>Ukuran custom variatif</span></figcaption></figure>
-   <figure><img src="images/project-7.jpg" alt="Ukiran kayu klasik"><figcaption>Detail Ukiran Kayu<span>Ukiran dekoratif • Handmade</span></figcaption></figure>
-   <figure><img src="images/project-8.jpg" alt="Rangka dan kusen kayu"><figcaption>Kusen & Rangka<span>Pengerjaan kayu custom</span></figcaption></figure>
-   <figure><img src="images/project-9.jpg" alt="Meja Klasik"><figcaption>Pengerjaan Furniture<span>Proses produksi</span></figcaption></figure>
+  <div class="filters" aria-label="Filter portofolio">
+    <button class="filter-btn active" data-filter="all">Semua</button>
+    <button class="filter-btn" data-filter="lemari">Lemari</button>
+    <button class="filter-btn" data-filter="meja">Meja</button>
+    <button class="filter-btn" data-filter="pintu">Pintu</button>
+    <button class="filter-btn" data-filter="ukiran">Ukiran</button>
+    <button class="filter-btn" data-filter="custom">Custom</button>
   </div>
+
+  <div class="gallery" id="portfolioGallery">
+    <figure data-category="lemari custom"><img src="images/project-2.jpg" alt="Lemari putih dengan pintu kaca" loading="lazy"><figcaption>Lemari Display Klasik<span>Finishing putih • Custom</span><a class="wa-btn" target="_blank" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20tertarik%20dengan%20Lemari%20Display%20Klasik.">Tanya Produk</a></figcaption></figure>
+    <figure data-category="meja custom"><img src="images/project-3.jpg" alt="Meja kerja putih dengan laci" loading="lazy"><figcaption>Meja Kerja<span>Finishing putih • Custom</span><a class="wa-btn" target="_blank" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20tertarik%20dengan%20Meja%20Kerja.">Tanya Produk</a></figcaption></figure>
+    <figure data-category="lemari custom"><img src="images/project-4.jpg" alt="Lemari pakaian klasik putih" loading="lazy"><figcaption>Lemari Pakaian Klasik<span>Finishing putih • Custom</span><a class="wa-btn" target="_blank" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20tertarik%20dengan%20Lemari%20Pakaian%20Klasik.">Tanya Produk</a></figcaption></figure>
+    <figure data-category="pintu custom"><img src="images/project-5.jpg" alt="Pintu kayu klasik" loading="lazy"><figcaption>Pintu Kayu Panel<span>Material kayu • Natural</span><a class="wa-btn" target="_blank" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20tertarik%20dengan%20Pintu%20Kayu%20Panel.">Tanya Produk</a></figcaption></figure>
+    <figure data-category="pintu custom"><img src="images/project-6.jpg" alt="Pintu kayu finishing cokelat" loading="lazy"><figcaption>Pintu Klasik Finishing Natural<span>Detail panel dekoratif</span><a class="wa-btn" target="_blank" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20tertarik%20dengan%20Pintu%20Klasik%20Finishing%20Natural.">Tanya Produk</a></figcaption></figure>
+    <figure data-category="ukiran custom"><img src="images/project-7.jpg" alt="Ukiran kayu klasik" loading="lazy"><figcaption>Detail Ukiran Kayu<span>Ukiran dekoratif • Handmade</span><a class="wa-btn" target="_blank" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20tertarik%20dengan%20Detail%20Ukiran%20Kayu.">Tanya Produk</a></figcaption></figure>
+    <figure data-category="custom pintu"><img src="images/project-8.jpg" alt="Rangka dan kusen kayu" loading="lazy"><figcaption>Kusen & Rangka<span>Pengerjaan kayu custom</span><a class="wa-btn" target="_blank" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20tertarik%20dengan%20Kusen%20dan%20Rangka.">Tanya Produk</a></figcaption></figure>
+    <figure data-category="custom meja"><img src="images/project-9.jpg" alt="Pekerjaan furniture kayu" loading="lazy"><figcaption>Pengerjaan Furniture<span>Proses produksi</span><a class="wa-btn" target="_blank" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20tertarik%20dengan%20Pengerjaan%20Furniture.">Tanya Produk</a></figcaption></figure>
+  </div>
+  <p class="portfolio-note">Untuk menambah koleksi: upload foto ke folder <strong>images</strong>, lalu tambahkan satu blok <code>&lt;figure&gt;</code> pada galeri.</p>
  </div>
 </section>
+
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="close" id="lightboxClose" aria-label="Tutup">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="caption" id="lightboxCaption"></div>
+</div>
 
 <section class="process">
  <div class="container">
@@ -161,5 +194,37 @@ footer{background:#17120e;color:#bcae9f;padding:24px 0;font: .8rem Arial,sans-se
 </section>
 
 <footer><div class="container">© 2026 Kardi Putra Furniture. Classic Furniture • Sukoharjo, Jawa Tengah.</div></footer>
+
+<script>
+(function(){
+  const buttons=document.querySelectorAll('.filter-btn');
+  const items=document.querySelectorAll('#portfolioGallery figure');
+  buttons.forEach(btn=>btn.addEventListener('click',()=>{
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter=btn.dataset.filter;
+    items.forEach(item=>{
+      const cats=(item.dataset.category||'').split(' ');
+      item.classList.toggle('hidden',filter!=='all' && !cats.includes(filter));
+    });
+  }));
+  const lightbox=document.getElementById('lightbox');
+  const img=document.getElementById('lightboxImg');
+  const caption=document.getElementById('lightboxCaption');
+  const close=document.getElementById('lightboxClose');
+  document.querySelectorAll('#portfolioGallery figure img').forEach(pic=>{
+    pic.style.cursor='zoom-in';
+    pic.addEventListener('click',()=>{
+      img.src=pic.src; img.alt=pic.alt; caption.textContent=pic.alt;
+      lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false');
+    });
+  });
+  function closeBox(){lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');img.src='';}
+  close.addEventListener('click',closeBox);
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeBox();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBox();});
+})();
+</script>
+
 </body>
 </html>
