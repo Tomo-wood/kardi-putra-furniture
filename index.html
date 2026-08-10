@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kardi Putra Furniture — furniture klasik, custom furniture, pintu dan lemari kayu di Sukoharjo, Jawa Tengah.">
+<title>Kardi Putra Furniture | Classic Furniture</title>
+<style>
+:root{
+  --bg:#f5f0e7; --paper:#fffdf8; --ink:#2e251d; --muted:#756a5e;
+  --wood:#8a542f; --wood2:#b77a49; --line:#dfd2c0; --dark:#201913;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+.nav{position:sticky;top:0;z-index:20;background:rgba(32,25,19,.96);color:#fff;backdrop-filter:blur(8px)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:bold;letter-spacing:1.2px;font-size:1.15rem}
+.brand small{display:block;font-size:.62rem;color:#d8b28b;letter-spacing:2px}
+.navlinks{display:flex;gap:24px;font-family:Arial,sans-serif;font-size:.9rem}
+.navlinks a:hover{color:#e2b487}
+.hero{min-height:78vh;display:grid;place-items:center;background:
+linear-gradient(90deg,rgba(28,21,15,.84),rgba(28,21,15,.42)),
+url("images/project-1.jpg") center/cover; color:white}
+.hero-content{padding:100px 0;max-width:760px}
+.kicker{letter-spacing:4px;text-transform:uppercase;color:#e0b58b;font:600 .75rem Arial,sans-serif}
+h1{font-size:clamp(2.7rem,7vw,5.6rem);line-height:.98;margin:16px 0 22px}
+.hero p{font-size:1.2rem;max-width:650px;color:#f2e9de}
+.btn{display:inline-block;padding:13px 22px;border:1px solid #d9a06d;margin:10px 8px 0 0;font-family:Arial,sans-serif;font-weight:bold}
+.btn.primary{background:#b87543;color:white;border-color:#b87543}
+section{padding:92px 0}
+.section-head{max-width:700px;margin-bottom:42px}
+.eyebrow{font:700 .72rem Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--wood)}
+h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.05;margin:10px 0 15px}
+.lead{color:var(--muted);font-size:1.08rem}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.quote{background:var(--dark);color:#fff;padding:42px;border:1px solid #4a392b}
+.quote strong{display:block;color:#e0b58b;font-size:1.2rem;margin-top:20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--paper);border:1px solid var(--line);padding:27px}
+.card h3{margin-top:0;font-size:1.35rem}
+.card p{color:var(--muted);font-family:Arial,sans-serif;font-size:.93rem}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery figure{margin:0;background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.gallery img{width:100%;height:300px;object-fit:cover;display:block;transition:transform .35s}
+.gallery figure:hover img{transform:scale(1.035)}
+.gallery figcaption{padding:14px 16px;font-weight:bold}
+.gallery figcaption span{display:block;font: .78rem Arial,sans-serif;color:var(--muted);font-weight:normal;margin-top:3px}
+.process{background:#ebe1d2}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{border-top:2px solid var(--wood);padding-top:18px}
+.num{font-size:2rem;color:var(--wood2)}
+.contact{background:var(--dark);color:white}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px}
+.contact p{color:#d9cec2}
+.contact-box{border:1px solid #58483a;padding:28px}
+.contact-box div{padding:12px 0;border-bottom:1px solid #40342a}
+.contact-box div:last-child{border-bottom:0}
+footer{background:#17120e;color:#bcae9f;padding:24px 0;font: .8rem Arial,sans-serif}
+@media(max-width:800px){
+ .nav-inner{height:auto;min-height:68px}.navlinks{gap:12px;font-size:.72rem}.brand{font-size:1rem}
+ .about,.contact-grid{grid-template-columns:1fr}.cards,.gallery{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+ .navlinks a:nth-child(-n+2){display:none}.hero{min-height:70vh}.hero-content{padding:80px 0}
+ .cards,.gallery,.steps{grid-template-columns:1fr}section{padding:70px 0}.gallery img{height:260px}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#">KARDI PUTRA<small>FURNITURE</small></a>
+    <div class="navlinks">
+      <a href="#tentang">Tentang</a><a href="#koleksi">Koleksi</a><a href="#proyek">Proyek</a><a href="#kontak">Kontak</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-content">
+    <div class="kicker">Classic Furniture • Sukoharjo</div>
+    <h1>Kayu yang dibuat menjadi karya.</h1>
+    <p>Furniture klasik, pintu, lemari, meja dan berbagai kebutuhan interior berbahan kayu — dikerjakan dengan perhatian pada detail dan karakter material.</p>
+    <a class="btn primary" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20ingin%20konsultasi%20furniture." target="_blank">Konsultasi via WhatsApp</a>
+    <a class="btn" href="#proyek">Lihat Portofolio</a>
+  </div>
+</header>
+
+<section id="tentang">
+ <div class="container about">
+  <div>
+   <div class="eyebrow">Tentang Kami</div>
+   <h2>Sentuhan klasik, dikerjakan dengan tangan dan ketelitian.</h2>
+   <p class="lead">Kardi Putra Furniture melayani pembuatan furniture dan pekerjaan kayu dengan karakter klasik. Mulai dari furniture rumah, lemari dan meja hingga pintu serta detail ukiran.</p>
+   <p>Kami menerima kebutuhan custom sehingga ukuran, desain, warna finishing, dan detail dapat disesuaikan dengan ruangan serta keinginan pelanggan.</p>
+  </div>
+  <div class="quote">
+   “Setiap potongan kayu punya karakter. Tugas kami adalah mengolahnya menjadi furniture yang bernilai dan tahan lama.”
+   <strong>Kardi Putra Furniture</strong>
+  </div>
+ </div>
+</section>
+
+<section id="koleksi">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Layanan</div><h2>Furniture untuk kebutuhan rumah Anda.</h2><p class="lead">Dari desain sederhana hingga detail klasik yang lebih dekoratif.</p></div>
+  <div class="cards">
+   <div class="card"><h3>Furniture Custom</h3><p>Meja, lemari, rak dan furniture lain dibuat mengikuti ukuran dan kebutuhan ruang.</p></div>
+   <div class="card"><h3>Pintu Kayu</h3><p>Pintu dengan panel klasik, kaca, finishing natural maupun warna sesuai permintaan.</p></div>
+   <div class="card"><h3>Ukiran & Detail</h3><p>Detail ukiran dekoratif dikerjakan untuk memberi karakter klasik pada produk kayu.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="proyek">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Portofolio</div><h2>Beberapa hasil pekerjaan kami.</h2><p class="lead">Dokumentasi langsung dari proses dan hasil karya Kardi Putra Furniture.</p></div>
+  <div class="gallery">
+   <figure><img src="images/project-2.jpg" alt="Lemari putih dengan pintu kaca"><figcaption>Lemari Display Klasik<span>Finishing putih • Custom</span></figcaption></figure>
+   <figure><img src="images/project-3.jpg" alt="Meja kerja putih dengan laci"><figcaption>Meja Kerja<span>Finishing putih • Custom</span></figcaption></figure>
+   <figure><img src="images/project-4.jpg" alt="Lemari pakaian klasik putih"><figcaption>Lemari Pakaian Klasik<span>Finishing putih • Custom</span></figcaption></figure>
+   <figure><img src="images/project-5.jpg" alt="Pintu kayu klasik"><figcaption>Pintu Kayu Panel<span>Material kayu • Natural</span></figcaption></figure>
+   <figure><img src="images/project-6.jpg" alt="Pintu kayu finishing cokelat"><figcaption>Pintu Klasik Finishing Natural<span>Detail panel dekoratif</span></figcaption></figure>
+   <figure><img src="images/project-7.jpg" alt="Ukiran kayu klasik"><figcaption>Detail Ukiran Kayu<span>Ukiran dekoratif • Handmade</span></figcaption></figure>
+   <figure><img src="images/project-8.jpg" alt="Rangka dan kusen kayu"><figcaption>Kusen & Rangka<span>Pengerjaan kayu custom</span></figcaption></figure>
+   <figure><img src="images/project-9.jpg" alt="Pekerjaan furniture kayu"><figcaption>Pengerjaan Furniture<span>Proses produksi</span></figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="process">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Cara Kerja</div><h2>Dari ide menjadi furniture.</h2></div>
+  <div class="steps">
+   <div class="step"><div class="num">01</div><h3>Konsultasi</h3><p>Diskusikan kebutuhan, ukuran, model dan finishing.</p></div>
+   <div class="step"><div class="num">02</div><h3>Penyesuaian</h3><p>Menentukan detail desain dan material sesuai kebutuhan.</p></div>
+   <div class="step"><div class="num">03</div><h3>Pengerjaan</h3><p>Produksi dan finishing dilakukan dengan memperhatikan detail.</p></div>
+   <div class="step"><div class="num">04</div><h3>Serah Terima</h3><p>Produk siap digunakan dan disesuaikan dengan kebutuhan pelanggan.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="kontak" class="contact">
+ <div class="container contact-grid">
+  <div>
+   <div class="eyebrow">Hubungi Kami</div>
+   <h2>Ingin membuat furniture custom?</h2>
+   <p>Ceritakan kebutuhan Anda. Kirim ukuran, foto ruangan, atau contoh desain yang Anda sukai melalui WhatsApp untuk mulai berdiskusi.</p>
+   <a class="btn primary" href="https://wa.me/6285641639540?text=Halo%20Kardi%20Putra%20Furniture,%20saya%20ingin%20konsultasi%20furniture." target="_blank">+62 856-4163-9540</a>
+  </div>
+  <div class="contact-box">
+   <div><strong>Nama</strong><br>Kardi Putra Furniture</div>
+   <div><strong>Alamat</strong><br>Jl. MT Sentono, Sidorejo, Bendosari, Sukoharjo, Jawa Tengah 57527</div>
+   <div><strong>WhatsApp</strong><br>+62 856-4163-9540</div>
+   <div><strong>Spesialisasi</strong><br>Classic Furniture • Custom Furniture • Pintu Kayu • Ukiran</div>
+  </div>
+ </div>
+</section>
+
+<footer><div class="container">© 2026 Kardi Putra Furniture. Classic Furniture • Sukoharjo, Jawa Tengah.</div></footer>
+</body>
+</html>
